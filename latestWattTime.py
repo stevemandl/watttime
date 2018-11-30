@@ -10,7 +10,7 @@ from requests.auth import HTTPBasicAuth
 
 # globals
 username  = "CornellCEP"
-password  = "xxxxxxxxx"
+password  = "CEPCornell2019"
 loginURL  = 'https://api2.watttime.org/v2/login/'
 dataURL   = 'https://api2.watttime.org/v2/data/'
 basicAuth = HTTPBasicAuth(username, password)
@@ -31,7 +31,7 @@ def main():
         authHeader = { 'Authorization': token }
 
         # compute five minutes ago
-        fiveMinAgo = (datetime.utcnow() + timedelta(minutes=-5)).isoformat()
+        fiveMinAgo = (datetime.utcnow() + timedelta(minutes=-65)).isoformat()
 
         # form the request payload
         payload = { 'ba': 'NYISO_CENTRAL',
