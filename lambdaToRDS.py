@@ -40,6 +40,7 @@ def main():
 
         res = cur.fetchone()
         lastTime = dateutil.parser.parse(res[0])
+	endTime = lastTime + timedelta(days=1)
         print( 'last time: %s' % lastTime)
 
 
@@ -58,7 +59,8 @@ def main():
 
         # form the request payload
         payload = { 'ba': 'NYISO_CENTRAL',
-                    'starttime': lastTime }
+                    'starttime': lastTime,
+		    'endtime': endTime }
 
         # make the REST call
         print("requesting data...")
